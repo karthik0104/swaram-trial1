@@ -34,6 +34,7 @@ def get_all_songs():
             # Filter out empty rows (where song_title is empty)
             if row.get('song_title', '').strip():
                 song = {
+                    'main_theme_title': row.get('main_theme_title', '').strip(),
                     'theme_title': row.get('theme_title', '').strip(),
                     'theme_image': row.get('theme_image', '').strip(),
                     'theme_share': row.get('theme_share', '').strip(),
