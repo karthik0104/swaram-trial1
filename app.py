@@ -31,14 +31,16 @@ def get_all_songs():
         # Convert to list of dictionaries
         songs = []
         for row in csv_reader:
-            # Filter out empty rows (where ID is empty)
-            if row.get('ID', '').strip():
+            # Filter out empty rows (where song_title is empty)
+            if row.get('song_title', '').strip():
                 song = {
-                    'id': row.get('ID', '').strip(),
-                    'title': row.get('Title', '').strip(),
-                    'artist': row.get('Artist', '').strip(),
-                    'link': row.get('Link', '').strip(),
-                    'art': row.get('Art', '').strip()
+                    'theme_title': row.get('theme_title', '').strip(),
+                    'theme_image': row.get('theme_image', '').strip(),
+                    'theme_share': row.get('theme_share', '').strip(),
+                    'song_title': row.get('song_title', '').strip(),
+                    'song_artist': row.get('song_artist', '').strip(),
+                    'song_url': row.get('song_url', '').strip(),
+                    'song_art': row.get('song_art', '').strip()
                 }
                 songs.append(song)
         
